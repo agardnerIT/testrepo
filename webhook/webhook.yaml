@@ -1,0 +1,13 @@
+apiVersion: webhookconfig.keptn.sh/v1alpha1
+kind: WebhookConfig
+metadata:
+  name: webhook-configuration
+spec:
+  webhooks:
+    - type: sh.keptn.event.hello-world.triggered
+      requests:
+        - >-
+          curl --header 'Authorization: Bearer Gdx8SvXDlOclxu33Sbf5vr39tmnzXc' --header 'Content-Type: application/json' --request POST --data '{"extra_vars":{"foo":"bar","keptnTask":"{{.type}}","keptnProject":"{{.data.project}}","keptnService":"{{.data.service}}","keptnStage":"{{.data.stage}}","keptnTriggeredID":"{{.id}}","keptnContext":"{{.shkeptncontext}}","keptnAPIToken":"3r60MsoeWQuJjONRaqH4UfvIqqxY1QO6zXSYbOyd5lEPb","keptnEndpoint":"http://34.133.235.4"}}' http://34.72.19.219/api/v2/job_templates/9/launch/
+      subscriptionID: 93c0d50d-8ea1-4001-92ef-7a18ffe7e6d6
+      sendFinished: false
+      sendStarted: false
